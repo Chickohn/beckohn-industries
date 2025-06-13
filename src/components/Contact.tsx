@@ -1,0 +1,214 @@
+import React, { useState } from 'react';
+import { Box, Container, Typography, TextField, Button, Paper } from '@mui/material';
+import { motion } from 'framer-motion';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would typically handle the form submission
+    console.log('Form submitted:', formData);
+  };
+
+  const contactInfo = [
+    {
+      icon: <FaEnvelope size={24} />,
+      title: 'Email',
+      content: 'contact@beckohnindustries.com',
+    },
+    {
+      icon: <FaPhone size={24} />,
+      title: 'Phone',
+      content: '+1 (555) 123-4567',
+    },
+    {
+      icon: <FaMapMarkerAlt size={24} />,
+      title: 'Location',
+      content: 'San Francisco, CA',
+    },
+  ];
+
+  return (
+    <Box
+      id="contact"
+      sx={{
+        py: 8,
+        backgroundColor: '#f8fafc',
+      }}
+    >
+      <Container maxWidth="lg">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <Typography
+            variant="h2"
+            align="center"
+            sx={{
+              mb: 2,
+              fontWeight: 700,
+              color: 'primary.main',
+            }}
+          >
+            Get in Touch
+          </Typography>
+          <Typography
+            variant="h5"
+            align="center"
+            sx={{
+              mb: 6,
+              color: 'text.secondary',
+              maxWidth: '800px',
+              mx: 'auto',
+            }}
+          >
+            Ready to start your project? Contact us today for a free consultation.
+          </Typography>
+        </motion.div>
+
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: {
+              xs: '1fr',
+              md: '1fr 1fr',
+            },
+            gap: 4,
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Paper
+              elevation={0}
+              sx={{
+                p: 4,
+                height: '100%',
+                backgroundColor: 'white',
+                borderRadius: 2,
+              }}
+            >
+              <form onSubmit={handleSubmit}>
+                <TextField
+                  fullWidth
+                  label="Name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  margin="normal"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  label="Email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  margin="normal"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  label="Message"
+                  name="message"
+                  multiline
+                  rows={4}
+                  value={formData.message}
+                  onChange={handleChange}
+                  margin="normal"
+                  required
+                />
+                <Button
+                  type="submit"
+                  variant="contained"
+                  size="large"
+                  sx={{
+                    mt: 2,
+                    py: 1.5,
+                  }}
+                >
+                  Send Message
+                </Button>
+              </form>
+            </Paper>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Box sx={{ height: '100%' }}>
+              {contactInfo.map((info, index) => (
+                <Paper
+                  key={index}
+                  elevation={0}
+                  sx={{
+                    p: 3,
+                    mb: 2,
+                    backgroundColor: 'white',
+                    borderRadius: 2,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 2,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      color: 'primary.main',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    {info.icon}
+                  </Box>
+                  <Box>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: 600,
+                        mb: 0.5,
+                      }}
+                    >
+                      {info.title}
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      color="text.secondary"
+                    >
+                      {info.content}
+                    </Typography>
+                  </Box>
+                </Paper>
+              ))}
+            </Box>
+          </motion.div>
+        </Box>
+      </Container>
+    </Box>
+  );
+};
+
+export default Contact; 
