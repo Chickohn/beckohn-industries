@@ -80,41 +80,37 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: { xs: 'center', md: 'flex-start' } }}>
-              <Button
-                component={Link}
-                to="services"
-                smooth={true}
-                duration={500}
-                variant="contained"
-                size="large"
-                sx={{
-                  backgroundColor: 'white',
-                  color: 'primary.main',
-                  '&:hover': {
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                  },
-                }}
-              >
-                Our Services
-              </Button>
-              <Button
-                component={Link}
-                to="contact"
-                smooth={true}
-                duration={500}
-                variant="outlined"
-                size="large"
-                sx={{
-                  borderColor: 'white',
-                  color: 'white',
-                  '&:hover': {
+              <Link to="services" smooth={true} duration={500}>
+                <Button
+                  variant="contained"
+                  size="large"
+                  sx={{
+                    backgroundColor: 'white',
+                    color: 'primary.main',
+                    '&:hover': {
+                      backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    },
+                  }}
+                >
+                  Our Services
+                </Button>
+              </Link>
+              <Link to="contact" smooth={true} duration={500}>
+                <Button
+                  variant="outlined"
+                  size="large"
+                  sx={{
                     borderColor: 'white',
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  },
-                }}
-              >
-                Get in Touch
-              </Button>
+                    color: 'white',
+                    '&:hover': {
+                      borderColor: 'white',
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    },
+                  }}
+                >
+                  Get in Touch
+                </Button>
+              </Link>
             </Box>
           </motion.div>
         </Box>

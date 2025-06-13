@@ -24,17 +24,20 @@ const Navbar = () => {
   const drawer = (
     <List>
       {menuItems.map((item) => (
-        <ListItem
+        <Link
           key={item}
-          component={Link}
           to={item.toLowerCase()}
           smooth={true}
           duration={500}
           onClick={handleDrawerToggle}
-          sx={{ cursor: 'pointer' }}
         >
-          <ListItemText primary={item} />
-        </ListItem>
+          <ListItem
+            button
+            sx={{ cursor: 'pointer' }}
+          >
+            <ListItemText primary={item} />
+          </ListItem>
+        </Link>
       ))}
     </List>
   );
@@ -63,22 +66,24 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {menuItems.map((item) => (
-              <Button
+              <Link
                 key={item}
-                component={Link}
                 to={item.toLowerCase()}
                 smooth={true}
                 duration={500}
-                sx={{
-                  color: isScrolled ? 'primary.main' : 'white',
-                  mx: 1,
-                  '&:hover': {
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)'
-                  }
-                }}
               >
-                {item}
-              </Button>
+                <Button
+                  sx={{
+                    color: isScrolled ? 'primary.main' : 'white',
+                    mx: 1,
+                    '&:hover': {
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                    }
+                  }}
+                >
+                  {item}
+                </Button>
+              </Link>
             ))}
           </Box>
 

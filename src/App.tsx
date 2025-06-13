@@ -29,12 +29,21 @@ const theme = createTheme({
       fontWeight: 600,
     },
   },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          scrollBehavior: 'smooth',
+        },
+      },
+    },
+  },
 });
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
+      <CssBaseline enableColorScheme />
       <div className="App">
         <Navbar />
         <Hero />

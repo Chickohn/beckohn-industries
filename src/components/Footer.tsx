@@ -130,7 +130,7 @@ const Footer = () => {
                 mb: 1,
               }}
             >
-              Email: contact@beckohnindustries.com
+              Email: contact@beckohn.com
             </Typography>
             <Typography
               variant="body2"
@@ -139,7 +139,7 @@ const Footer = () => {
                 mb: 1,
               }}
             >
-              Phone: +1 (555) 123-4567
+              Phone: +44 7478 277391
             </Typography>
             <Typography
               variant="body2"
@@ -147,7 +147,7 @@ const Footer = () => {
                 color: 'rgba(255, 255, 255, 0.7)',
               }}
             >
-              Location: San Francisco, CA
+              Location: South London, UK
             </Typography>
           </Box>
         </Box>

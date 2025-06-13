@@ -28,17 +28,17 @@ const Contact = () => {
     {
       icon: <FaEnvelope size={24} />,
       title: 'Email',
-      content: 'contact@beckohnindustries.com',
+      content: 'contact@beckohn.com',
     },
     {
       icon: <FaPhone size={24} />,
       title: 'Phone',
-      content: '+1 (555) 123-4567',
+      content: '+44 7478 277391',
     },
     {
       icon: <FaMapMarkerAlt size={24} />,
       title: 'Location',
-      content: 'San Francisco, CA',
+      content: 'South London, UK',
     },
   ];
 
