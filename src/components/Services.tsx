@@ -32,7 +32,7 @@ const Services = () => {
       id="services"
       sx={{
         py: 8,
-        backgroundColor: '#f8fafc',
+        backgroundColor: 'background.default',
       }}
     >
       <Container maxWidth="lg">

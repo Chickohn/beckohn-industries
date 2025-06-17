@@ -8,7 +8,7 @@ const About = () => {
       id="about"
       sx={{
         py: 8,
-        backgroundColor: 'white',
+        backgroundColor: 'background.paper',
       }}
     >
       <Container maxWidth="lg">
@@ -37,7 +37,7 @@ const About = () => {
                 color: 'primary.main',
               }}
             >
-              About Beckohn Industries
+              About Beckohn Digital
             </Typography>
             <Typography
               variant="h5"
@@ -56,7 +56,7 @@ const About = () => {
                 lineHeight: 1.8,
               }}
             >
-              At Beckohn Industries, we believe that a great website is more than just code – it's a powerful tool that can transform your business. Our team combines technical expertise with creative vision to deliver websites that not only look stunning but also drive real results.
+              At Beckohn Digital, we believe that a great website is more than just code – it's a powerful tool that can transform your business. Our team combines technical expertise with creative vision to deliver websites that not only look stunning but also drive real results.
             </Typography>
             <Typography
               variant="body1"

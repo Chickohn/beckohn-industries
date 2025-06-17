@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <AppBar position="fixed" sx={{ 
-      backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
+      backgroundColor: 'custom.navbarScrolled', // isScrolled ? 'custom.navbarScrolled' : 'transparent',
       boxShadow: isScrolled ? 1 : 0,
       transition: 'all 0.3s ease-in-out'
     }}>
@@ -55,12 +55,12 @@ const Navbar = () => {
             component="div"
             sx={{
               flexGrow: 1,
-              color: isScrolled ? 'primary.main' : 'white',
+              color: 'common.white', // isScrolled ? 'primary.main' : 'common.white',
               fontWeight: 700,
               fontSize: '1.5rem'
             }}
           >
-            Beckohn Industries
+            Beckohn Digital
           </Typography>
 
           {/* Desktop Menu */}
@@ -74,10 +74,10 @@ const Navbar = () => {
               >
                 <Button
                   sx={{
-                    color: isScrolled ? 'primary.main' : 'white',
+                    color: 'common.white', // isScrolled ? 'primary.main' : 'common.white',
                     mx: 1,
                     '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                      backgroundColor: 'action.hover'
                     }
                   }}
                 >
@@ -93,7 +93,7 @@ const Navbar = () => {
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerToggle}
-            sx={{ display: { md: 'none' }, color: isScrolled ? 'primary.main' : 'white' }}
+            sx={{ display: { md: 'none' }, color: 'common.white' }} // isScrolled ? 'primary.main' : 'common.white' }}
           >
             <MenuIcon />
           </IconButton>

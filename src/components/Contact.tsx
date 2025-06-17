@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Container, Typography, TextField, Button, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,15 +21,30 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically handle the form submission
-    console.log('Form submitted:', formData);
+    emailjs.send(
+      'service_qr0f7tb',
+      'template_v5ptya7',
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      },
+      'QWT65g4wOa_w_NZbI'
+    )
+    .then((result) => {
+        alert('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' });
+    }, (error) => {
+        alert('Failed to send message. Please try again later.');
+        console.error(error.text);
+    });
   };
 
   const contactInfo = [
     {
       icon: <FaEnvelope size={24} />,
       title: 'Email',
-      content: 'contact@beckohn.com',
+      content: 'digital@beckohn.com',
     },
     {
       icon: <FaPhone size={24} />,
@@ -47,7 +63,7 @@ const Contact = () => {
       id="contact"
       sx={{
         py: 8,
-        backgroundColor: '#f8fafc',
+        backgroundColor: 'background.default',
       }}
     >
       <Container maxWidth="lg">
@@ -103,7 +119,7 @@ const Contact = () => {
               sx={{
                 p: 4,
                 height: '100%',
-                backgroundColor: 'white',
+                backgroundColor: 'background.paper',
                 borderRadius: 2,
               }}
             >
@@ -167,7 +183,7 @@ const Contact = () => {
                   sx={{
                     p: 3,
                     mb: 2,
-                    backgroundColor: 'white',
+                    backgroundColor: 'background.paper',
                     borderRadius: 2,
                     display: 'flex',
                     alignItems: 'center',

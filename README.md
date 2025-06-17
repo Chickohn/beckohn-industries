@@ -1,6 +1,6 @@
-# Beckohn Industries
+# Beckohn Digital
 
-This project is a modern, responsive website for Beckohn Industries, showcasing the company's services, contact information, and social media presence. The website is built using React, TypeScript, and Material-UI, with a focus on performance and user experience.
+This project is a modern, responsive website for Beckohn Digital, showcasing the company's services, contact information, and social media presence. The website is built using React, TypeScript, and Material-UI, with a focus on performance and user experience.
 
 ## Features
 
@@ -20,8 +20,8 @@ This project is a modern, responsive website for Beckohn Industries, showcasing 
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/beckohn-industries.git
-   cd beckohn-industries
+   git clone https://github.com/yourusername/beckohn-digital.git
+   cd beckohn-digital
    ```
 
 2. Install dependencies:

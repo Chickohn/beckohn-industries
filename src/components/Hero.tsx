@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Container, Typography, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
+import HeroBackgroundDots from './HeroBackgroundDots';
 
 const Hero = () => {
   return (
@@ -9,26 +10,14 @@ const Hero = () => {
       id="home"
       sx={{
         height: '100vh',
-        background: 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
+        background: 'linear-gradient(135deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%)',
         display: 'flex',
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      {/* Background Pattern */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          opacity: 0.1,
-          backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px',
-        }}
-      />
+      <HeroBackgroundDots />
 
       <Container maxWidth="lg">
         <Box
@@ -47,7 +36,7 @@ const Hero = () => {
             <Typography
               variant="h1"
               sx={{
-                color: 'white',
+                color: 'common.white',
                 fontSize: { xs: '2.5rem', md: '4rem' },
                 fontWeight: 700,
                 mb: 2,
@@ -65,7 +54,7 @@ const Hero = () => {
             <Typography
               variant="h5"
               sx={{
-                color: 'rgba(255, 255, 255, 0.9)',
+                color: 'common.white',
                 mb: 4,
                 maxWidth: '600px',
               }}
@@ -85,10 +74,10 @@ const Hero = () => {
                   variant="contained"
                   size="large"
                   sx={{
-                    backgroundColor: 'white',
+                    backgroundColor: 'common.white',
                     color: 'primary.main',
                     '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                      backgroundColor: 'action.hover',
                     },
                   }}
                 >
@@ -100,11 +89,11 @@ const Hero = () => {
                   variant="outlined"
                   size="large"
                   sx={{
-                    borderColor: 'white',
-                    color: 'white',
+                    borderColor: 'common.white',
+                    color: 'common.white',
                     '&:hover': {
-                      borderColor: 'white',
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      borderColor: 'common.white',
+                      backgroundColor: 'custom.borderLight',
                     },
                   }}
                 >

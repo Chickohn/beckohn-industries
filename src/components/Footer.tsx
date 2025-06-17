@@ -4,10 +4,10 @@ import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <FaTwitter />, url: 'https://twitter.com/beckohnindustries' },
-    { icon: <FaLinkedin />, url: 'https://linkedin.com/company/beckohnindustries' },
-    { icon: <FaGithub />, url: 'https://github.com/beckohnindustries' },
-    { icon: <FaInstagram />, url: 'https://instagram.com/beckohnindustries' },
+    { icon: <FaTwitter />, url: 'https://twitter.com/beckohndigital' },
+    { icon: <FaLinkedin />, url: 'https://linkedin.com/company/beckohndigital' },
+    { icon: <FaGithub />, url: 'https://github.com/beckohndigital' },
+    { icon: <FaInstagram />, url: 'https://instagram.com/beckohndigital' },
   ];
 
   return (
@@ -15,8 +15,8 @@ const Footer = () => {
       component="footer"
       sx={{
         py: 6,
-        backgroundColor: '#1e293b',
-        color: 'white',
+        backgroundColor: 'var(--color-bg-dark)',
+        color: 'text.secondary',
       }}
     >
       <Container maxWidth="lg">
@@ -38,16 +38,16 @@ const Footer = () => {
                 fontWeight: 700,
               }}
             >
-              Beckohn Industries
+              Beckohn Digital
             </Typography>
             <Typography
               variant="body2"
               sx={{
-                color: 'rgba(255, 255, 255, 0.7)',
+                color: 'text.secondary',
                 mb: 2,
               }}
             >
-              Transforming ideas into exceptional digital experiences.
+              Beckohn, and the future will come...
             </Typography>
             <Box sx={{ display: 'flex', gap: 1 }}>
               {socialLinks.map((social, index) => (
@@ -58,9 +58,9 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   sx={{
-                    color: 'rgba(255, 255, 255, 0.7)',
+                    color: 'text.secondary',
                     '&:hover': {
-                      color: 'white',
+                      color: 'common.white',
                     },
                   }}
                 >
@@ -99,10 +99,10 @@ const Footer = () => {
                   <Link
                     href={`#${item.toLowerCase()}`}
                     sx={{
-                      color: 'rgba(255, 255, 255, 0.7)',
+                      color: 'text.secondary',
                       textDecoration: 'none',
                       '&:hover': {
-                        color: 'white',
+                        color: 'common.white',
                       },
                     }}
                   >
@@ -126,16 +126,16 @@ const Footer = () => {
             <Typography
               variant="body2"
               sx={{
-                color: 'rgba(255, 255, 255, 0.7)',
+                color: 'text.secondary',
                 mb: 1,
               }}
             >
-              Email: contact@beckohn.com
+              Email: digital@beckohn.com
             </Typography>
             <Typography
               variant="body2"
               sx={{
-                color: 'rgba(255, 255, 255, 0.7)',
+                color: 'text.secondary',
                 mb: 1,
               }}
             >
@@ -144,7 +144,7 @@ const Footer = () => {
             <Typography
               variant="body2"
               sx={{
-                color: 'rgba(255, 255, 255, 0.7)',
+                color: 'text.secondary',
               }}
             >
               Location: South London, UK
@@ -156,17 +156,18 @@ const Footer = () => {
           sx={{
             mt: 4,
             pt: 4,
-            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+            borderTop: '1px solid',
+            borderColor: 'custom.borderLight',
             textAlign: 'center',
           }}
         >
           <Typography
             variant="body2"
             sx={{
-              color: 'rgba(255, 255, 255, 0.7)',
+              color: 'text.secondary',
             }}
           >
-            © {new Date().getFullYear()} Beckohn Industries. All rights reserved.
+            © {new Date().getFullYear()} Beckohn Digital. All rights reserved.
           </Typography>
         </Box>
       </Container>

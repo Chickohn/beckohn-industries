@@ -8,16 +8,45 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+// Extend the theme interface for custom colors
+declare module '@mui/material/styles' {
+  interface Palette {
+    custom: {
+      textLighter: string;
+      borderLight: string;
+      navbarScrolled: string;
+      bgDark: string;
+    };
+  }
+  interface PaletteOptions {
+    custom?: {
+      textLighter?: string;
+      borderLight?: string;
+      navbarScrolled?: string;
+      bgDark?: string;
+    };
+  }
+}
+
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#2563eb', // Modern blue
+      main: '#2563eb',
+      dark: '#1e40af',
     },
     secondary: {
-      main: '#10b981', // Emerald green
+      main: '#10b981',
     },
     background: {
-      default: '#ffffff',
+      default: '#f8fafc',
+      paper: '#ffffff',
+    },
+    text: {
+      primary: '#22223b',
+      secondary: 'rgb(148, 148, 148)',
+    },
+    action: {
+      hover: 'rgba(255, 255, 255, 0.1)',
     },
   },
   typography: {
