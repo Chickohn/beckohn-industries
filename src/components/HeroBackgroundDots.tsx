@@ -3,13 +3,15 @@ import '../index.css'
 
 const DOT_SPACING = 35; // px
 const DOT_RADIUS = 1.5;
-const REPULSE_RADIUS = 80; // px
-const REPULSE_STRENGTH = 30; // px
+const BASE_REPULSE_RADIUS = 80; // px
+const BASE_REPULSE_STRENGTH = 30; // px
+const CLICK_MULTIPLIER = 3;
 
 const HeroBackgroundDots: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouse = useRef({ x: -1000, y: -1000 });
   const dots = useRef<{ x: number; y: number; ox: number; oy: number }[]>([]);
+  const isClicking = useRef(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -42,7 +44,7 @@ const HeroBackgroundDots: React.FC = () => {
     resize();
     window.addEventListener('resize', resize);
 
-    // Mouse move handler
+    // Mouse handlers
     const handleMouseMove = (e: MouseEvent) => {
       if (!canvas) return;
       const rect = canvas.getBoundingClientRect();
@@ -52,26 +54,42 @@ const HeroBackgroundDots: React.FC = () => {
     const handleMouseLeave = () => {
       mouse.current.x = -1000;
       mouse.current.y = -1000;
+      isClicking.current = false;
     };
+    const handleMouseDown = () => {
+      isClicking.current = true;
+    };
+    const handleMouseUp = () => {
+      isClicking.current = false;
+    };
+
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseLeave);
+    canvas.addEventListener('mousedown', handleMouseDown);
+    canvas.addEventListener('mouseup', handleMouseUp);
+    // Handle case where mouse is released outside canvas
+    window.addEventListener('mouseup', handleMouseUp);
 
     // Animation loop
     let running = true;
     function animate() {
       if (!running || !ctx || !canvas) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const currentRepulseRadius = isClicking.current ? BASE_REPULSE_RADIUS * (CLICK_MULTIPLIER/2) : BASE_REPULSE_RADIUS;
+      const currentRepulseStrength = isClicking.current ? BASE_REPULSE_STRENGTH * CLICK_MULTIPLIER : BASE_REPULSE_STRENGTH;
+
       for (const dot of dots.current) {
         // Repulsion logic
         const dx = dot.ox - mouse.current.x;
         const dy = dot.oy - mouse.current.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < REPULSE_RADIUS) {
+        if (dist < currentRepulseRadius) {
           // Calculate repulsion
           const angle = Math.atan2(dy, dx);
-          const force = (REPULSE_RADIUS - dist) / REPULSE_RADIUS;
-          const tx = dot.ox + Math.cos(angle) * force * REPULSE_STRENGTH;
-          const ty = dot.oy + Math.sin(angle) * force * REPULSE_STRENGTH;
+          const force = (currentRepulseRadius - dist) / currentRepulseRadius;
+          const tx = dot.ox + Math.cos(angle) * force * currentRepulseStrength;
+          const ty = dot.oy + Math.sin(angle) * force * currentRepulseStrength;
           // Smoothly move dot to target
           dot.x += (tx - dot.x) * 0.2;
           dot.y += (ty - dot.y) * 0.2;
@@ -95,6 +113,9 @@ const HeroBackgroundDots: React.FC = () => {
       window.removeEventListener('resize', resize);
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
+      canvas.removeEventListener('mousedown', handleMouseDown);
+      canvas.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('mouseup', handleMouseUp);
     };
   }, []);
 
@@ -105,8 +126,9 @@ const HeroBackgroundDots: React.FC = () => {
         position: 'absolute',
         top: 0, left: 0, width: '100%', height: '100%',
         zIndex: 0,
-        pointerEvents: 'auto', // Allow mouse events for interactivity
+        pointerEvents: 'auto',
         display: 'block',
+        cursor: 'pointer', // Add cursor pointer to indicate interactivity
       }}
     />
   );
