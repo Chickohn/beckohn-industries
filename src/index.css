@@ -1,27 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --color-primary: #2563eb;
-  --color-primary-dark: #1e40af;
-  --color-secondary: #10b981;
-  --color-bg-light: #f8fafc;
-  --color-bg-dark: #1e293b;
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --color-primary: #A7F0BA    ;
+  --color-primary-dark: #A7F0BA    ;
+  --color-secondary: #A7F0BA    ;
+  --color-bg-light: #2b4930;
+  --color-bg-dark: #121F12;
+  --color-white: #e9ffea;
+  --color-black: #021300;
   --color-scrollbar-track: #f1f1f1;
   --color-scrollbar-thumb: var(--color-primary);
   --color-scrollbar-thumb-hover: var(--color-primary-dark);
   --color-link: #61dafb;
   --color-header-bg: #282c34;
-  --color-text: #22223b;
-  --color-text-light: rgba(255, 255, 255, 0.7);
+  --color-text: #F1F5F1;
+  --color-text-light: #A9B9A9;
   --color-text-lighter: rgba(255, 255, 255, 0.9);
   --color-border-light: rgba(255, 255, 255, 0.1);
   
   /* Additional variables for complex styling */
   --color-navbar-bg-scrolled: rgba(255, 255, 255, 0.95);
-  --color-gradient-start: var(--color-primary);
-  --color-gradient-end: var(--color-primary-dark);
+  --color-gradient-start: #25462b;
+  --color-gradient-end: #08160b;
 }
 
 * {

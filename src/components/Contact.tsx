@@ -42,17 +42,17 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <FaEnvelope size={24} />,
+      icon: <FaEnvelope size={24} color="var(--color-primary)" />,
       title: 'Email',
       content: 'digital@beckohn.com',
     },
     {
-      icon: <FaPhone size={24} />,
+      icon: <FaPhone size={24} color="var(--color-primary)"/>,
       title: 'Phone',
       content: '+44 7478 277391',
     },
     {
-      icon: <FaMapMarkerAlt size={24} />,
+      icon: <FaMapMarkerAlt size={24} color="var(--color-primary)" />,
       title: 'Location',
       content: 'South London, UK',
     },
@@ -79,7 +79,7 @@ const Contact = () => {
             sx={{
               mb: 2,
               fontWeight: 700,
-              color: 'primary.main',
+              color: 'var(--color-primary)',
             }}
           >
             Get in Touch
@@ -161,6 +161,7 @@ const Contact = () => {
                   sx={{
                     mt: 2,
                     py: 1.5,
+                    backgroundColor: 'var(--color-primary)',
                   }}
                 >
                   Send Message

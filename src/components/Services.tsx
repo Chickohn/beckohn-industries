@@ -5,22 +5,22 @@ import { FaCode, FaMobile, FaShoppingCart, FaSearch } from 'react-icons/fa';
 
 const services = [
   {
-    icon: <FaCode size={40} />,
+    icon: <FaCode size={40} color="var(--color-primary)" />,
     title: 'Custom Web Development',
     description: 'Tailored websites built with modern technologies to meet your specific business needs.',
   },
   {
-    icon: <FaMobile size={40} />,
+    icon: <FaMobile size={40} color="var(--color-primary)"/>,
     title: 'Responsive Design',
     description: 'Websites that look and perform perfectly on all devices, from mobile to desktop.',
   },
   {
-    icon: <FaShoppingCart size={40} />,
+    icon: <FaShoppingCart size={40} color="var(--color-primary)"/>,
     title: 'E-commerce Solutions',
     description: 'Powerful online stores with secure payment processing and inventory management.',
   },
   {
-    icon: <FaSearch size={40} />,
+    icon: <FaSearch size={40} color="var(--color-primary)"/>,
     title: 'SEO Optimization',
     description: 'Strategic optimization to improve your website\'s visibility in search engines.',
   },
@@ -32,7 +32,7 @@ const Services = () => {
       id="services"
       sx={{
         py: 8,
-        backgroundColor: 'background.default',
+        backgroundColor: 'var(--color-black)',
       }}
     >
       <Container maxWidth="lg">
@@ -48,7 +48,7 @@ const Services = () => {
             sx={{
               mb: 2,
               fontWeight: 700,
-              color: 'primary.main',
+              color: 'var(--color-secondary)',
             }}
           >
             Our Services
@@ -58,7 +58,7 @@ const Services = () => {
             align="center"
             sx={{
               mb: 6,
-              color: 'text.secondary',
+              color: 'var(--color-text-light)',
               maxWidth: '800px',
               mx: 'auto',
             }}
@@ -85,6 +85,7 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
+              
             >
               <Card
                 sx={{
@@ -95,12 +96,13 @@ const Services = () => {
                   '&:hover': {
                     transform: 'translateY(-8px)',
                   },
+                  backgroundColor: 'var(--color-bg-dark)',
                 }}
               >
                 <CardContent sx={{ flexGrow: 1, textAlign: 'center', p: 4 }}>
                   <Box
                     sx={{
-                      color: 'primary.main',
+                      color: 'var(--color-primary)',
                       mb: 2,
                       display: 'flex',
                       justifyContent: 'center',
@@ -114,6 +116,7 @@ const Services = () => {
                     sx={{
                       mb: 2,
                       fontWeight: 600,
+                      color: 'var(--color-text)',
                     }}
                   >
                     {service.title}
