@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import '../index.css'
 
 const DOT_SPACING = 50; // px
 const DOT_RADIUS = 1.5;

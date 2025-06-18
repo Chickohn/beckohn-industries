@@ -34,7 +34,7 @@ const About = () => {
               sx={{
                 mb: 3,
                 fontWeight: 700,
-                color: 'primary.main',
+                color: 'var(--color-primary)',
               }}
             >
               About Beckohn Digital
@@ -85,8 +85,9 @@ const About = () => {
                   left: -20,
                   right: 20,
                   bottom: 20,
-                  border: '2px solid',
-                  borderColor: 'primary.main',
+                  border: '5px solid',
+                  borderColor: 'var(--color-primary-dark)',
+                  backgroundColor: 'var(--color-primary)',
                   zIndex: 0,
                 },
               }}
@@ -97,7 +98,7 @@ const About = () => {
                 alt="Team working on web development"
                 sx={{
                   width: '100%',
-                  height: 'auto',
+                  height: '100%',
                   position: 'relative',
                   zIndex: 1,
                 }}

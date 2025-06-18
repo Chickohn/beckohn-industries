@@ -44,23 +44,31 @@ const Navbar = () => {
 
   return (
     <AppBar position="fixed" sx={{ 
-      backgroundColor: 'custom.navbarScrolled', // isScrolled ? 'custom.navbarScrolled' : 'transparent',
+      backgroundColor: 'var(--color-black)',
+      //backgroundColor: 'custom.navbarScrolled', // isScrolled ? 'custom.navbarScrolled' : 'transparent',
       boxShadow: isScrolled ? 1 : 0,
       transition: 'all 0.3s ease-in-out'
     }}>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{
+        backgroundColor: 'var(--color-black)',
+      }}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
             component="div"
             sx={{
               flexGrow: 1,
-              color: 'common.white', // isScrolled ? 'primary.main' : 'common.white',
+              color: 'var(--color-white)', // isScrolled ? 'primary.main' : 'common.white',
               fontWeight: 700,
               fontSize: '1.5rem'
             }}
           >
-            Beckohn Digital
+            <Box component="span" sx={{ color: 'var(--color-secondary)' }}>B</Box>eckohn 
+            <Box component="span" sx={{ color: 'var(--color-secondary)' }}> D</Box>igital
+
+
+
+            
           </Typography>
 
           {/* Desktop Menu */}
@@ -98,6 +106,7 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
         </Toolbar>
+        
       </Container>
 
       {/* Mobile Drawer */}
