@@ -63,7 +63,7 @@ const Contact = () => {
       id="contact"
       sx={{
         py: 8,
-        backgroundColor: 'background.default',
+        backgroundColor: 'var(--color-black)',
       }}
     >
       <Container maxWidth="lg">
@@ -79,7 +79,7 @@ const Contact = () => {
             sx={{
               mb: 2,
               fontWeight: 700,
-              color: 'var(--color-primary)',
+              color: 'var(--color-secondary)',
             }}
           >
             Get in Touch
@@ -89,7 +89,7 @@ const Contact = () => {
             align="center"
             sx={{
               mb: 6,
-              color: 'text.secondary',
+              color: 'var(--color-text-light)',
               maxWidth: '800px',
               mx: 'auto',
             }}
@@ -119,54 +119,65 @@ const Contact = () => {
               sx={{
                 p: 4,
                 height: '100%',
-                backgroundColor: 'background.paper',
+                backgroundColor: 'var(--color-bg-dark)',
                 borderRadius: 2,
               }}
             >
-              <form onSubmit={handleSubmit}>
-                <TextField
-                  fullWidth
-                  label="Name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  margin="normal"
-                  required
-                />
-                <TextField
-                  fullWidth
-                  label="Email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  margin="normal"
-                  required
-                />
-                <TextField
-                  fullWidth
-                  label="Message"
-                  name="message"
-                  multiline
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  margin="normal"
-                  required
-                />
-                <Button
-                  type="submit"
-                  variant="contained"
-                  size="large"
-                  sx={{
-                    mt: 2,
-                    py: 1.5,
-                    backgroundColor: 'var(--color-primary)',
-                  }}
-                >
-                  Send Message
-                </Button>
-              </form>
+              <Box
+                sx={{
+                  '& .MuiTextField-root': {
+                    '& .MuiInputBase-root': {
+                      border: '1px solid var(--color-border-light)',
+                    },
+                  },
+                }}
+              >
+                <form onSubmit={handleSubmit}>
+                  <TextField
+                    fullWidth
+                    label="Name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    margin="normal"
+                    required
+                  />
+                  <TextField
+                    fullWidth
+                    label="Email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    margin="normal"
+                    required
+                  />
+                  <TextField
+                    fullWidth
+                    label="Message"
+                    name="message"
+                    multiline
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
+                    margin="normal"
+                    required
+                  />
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    size="large"
+                    sx={{
+                      mt: 2,
+                      py: 1.5,
+                      backgroundColor: 'var(--color-primary)',
+                      color: 'var(--color-black)',
+                    }}
+                  >
+                    Send Message
+                  </Button>
+                </form>
+              </Box>
             </Paper>
           </motion.div>
 
@@ -184,7 +195,7 @@ const Contact = () => {
                   sx={{
                     p: 3,
                     mb: 2,
-                    backgroundColor: 'background.paper',
+                    backgroundColor: 'var(--color-bg-dark)',
                     borderRadius: 2,
                     display: 'flex',
                     alignItems: 'center',
@@ -207,13 +218,16 @@ const Contact = () => {
                       sx={{
                         fontWeight: 600,
                         mb: 0.5,
+                        color: 'var(--color-text)',
                       }}
                     >
                       {info.title}
                     </Typography>
                     <Typography
                       variant="body1"
-                      color="text.secondary"
+                      sx={{
+                        color: 'var(--color-text-light)',
+                      }}
                     >
                       {info.content}
                     </Typography>

@@ -30,23 +30,30 @@ declare module '@mui/material/styles' {
 
 const theme = createTheme({
   palette: {
+    mode: 'dark',
     primary: {
-      main: '#2563eb',
-      dark: '#1e40af',
+      main: '#A7F0BA',
+      dark: '#A7F0BA',
     },
     secondary: {
-      main: '#10b981',
+      main: '#A7F0BA',
     },
     background: {
-      default: '#f8fafc',
-      paper: '#ffffff',
+      default: '#021300',
+      paper: '#121F12',
     },
     text: {
-      primary: '#22223b',
-      secondary: 'rgb(148, 148, 148)',
+      primary: '#F1F5F1',
+      secondary: '#A9B9A9',
     },
     action: {
       hover: 'rgba(255, 255, 255, 0.1)',
+    },
+    custom: {
+      textLighter: 'rgba(255, 255, 255, 0.9)',
+      borderLight: 'rgba(255, 255, 255, 0.1)',
+      navbarScrolled: 'rgba(255, 255, 255, 0.95)',
+      bgDark: '#121F12',
     },
   },
   typography: {

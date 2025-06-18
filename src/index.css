@@ -2,10 +2,11 @@
 
 :root {
   --color-primary: #A7F0BA    ;
-  --color-primary-dark: #A7F0BA    ;
+  --color-primary-dark: #011507    ;
   --color-secondary: #A7F0BA    ;
   --color-bg-light: #2b4930;
   --color-bg-dark: #121F12;
+  /*--color-bg-darker: #031600;*/
   --color-white: #e9ffea;
   --color-black: #021300;
   --color-scrollbar-track: #f1f1f1;

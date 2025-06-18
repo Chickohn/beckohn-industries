@@ -45,30 +45,24 @@ const Navbar = () => {
   return (
     <AppBar position="fixed" sx={{ 
       backgroundColor: 'var(--color-black)',
-      //backgroundColor: 'custom.navbarScrolled', // isScrolled ? 'custom.navbarScrolled' : 'transparent',
       boxShadow: isScrolled ? 1 : 0,
-      transition: 'all 0.3s ease-in-out'
+      transition: 'all 0.3s ease-in-out',
+      width: '100%'
     }}>
-      <Container maxWidth="lg" sx={{
-        backgroundColor: 'var(--color-black)',
-      }}>
+      <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
             component="div"
             sx={{
               flexGrow: 1,
-              color: 'var(--color-white)', // isScrolled ? 'primary.main' : 'common.white',
+              color: 'var(--color-white)',
               fontWeight: 700,
               fontSize: '1.5rem'
             }}
           >
             <Box component="span" sx={{ color: 'var(--color-secondary)' }}>B</Box>eckohn 
             <Box component="span" sx={{ color: 'var(--color-secondary)' }}> D</Box>igital
-
-
-
-            
           </Typography>
 
           {/* Desktop Menu */}

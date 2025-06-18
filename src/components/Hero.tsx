@@ -75,9 +75,10 @@ const Hero = () => {
                   size="large"
                   sx={{
                     backgroundColor: 'common.white',
-                    color: 'var(--color-primary)',
+                    color: 'var(--color-black)',
                     '&:hover': {
                       backgroundColor: 'action.hover',
+                      color: 'var(--color-primary)',
                     },
                   }}
                 >

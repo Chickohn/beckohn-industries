@@ -8,7 +8,7 @@ const About = () => {
       id="about"
       sx={{
         py: 8,
-        backgroundColor: 'background.paper',
+        backgroundColor: 'var(--color-primary-dark)',
       }}
     >
       <Container maxWidth="lg">
@@ -34,7 +34,7 @@ const About = () => {
               sx={{
                 mb: 3,
                 fontWeight: 700,
-                color: 'var(--color-primary)',
+                color: 'var(--color-secondary)',
               }}
             >
               About Beckohn Digital
@@ -43,7 +43,7 @@ const About = () => {
               variant="h5"
               sx={{
                 mb: 4,
-                color: 'text.secondary',
+                color: 'var(--color-text-light)',
               }}
             >
               We're a team of passionate developers and designers dedicated to creating exceptional digital experiences.
@@ -52,7 +52,7 @@ const About = () => {
               variant="body1"
               sx={{
                 mb: 3,
-                color: 'text.secondary',
+                color: 'var(--color-text-light)',
                 lineHeight: 1.8,
               }}
             >
@@ -61,7 +61,7 @@ const About = () => {
             <Typography
               variant="body1"
               sx={{
-                color: 'text.secondary',
+                color: 'var(--color-text-light)',
                 lineHeight: 1.8,
               }}
             >
@@ -86,8 +86,8 @@ const About = () => {
                   right: 20,
                   bottom: 20,
                   border: '5px solid',
-                  borderColor: 'var(--color-primary-dark)',
-                  backgroundColor: 'var(--color-primary)',
+                  borderColor: 'var(--color-primary)',
+                  backgroundColor: 'var(--color-bg-dark)',
                   zIndex: 0,
                 },
               }}
